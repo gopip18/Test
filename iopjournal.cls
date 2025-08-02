@@ -1,9 +1,9 @@
-% 
+%
 % This is file `iopjournal.cls'
 %
-% This file is distributed in the hope that it will be useful, 
-% but WITHOUT ANY WARRANTY; without even the implied warranty of 
-% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+% This file is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 %
 % IOP Publishing Ltd
 %
@@ -18,9 +18,9 @@
 %   http://www.latex-project.org/lppl.txt
 % and version 1.3c or later is part of all distributions of LaTeX
 % version 2005/12/01 or later.
-% 
+%
 % This work has the LPPL maintenance status `maintained'.
-% 
+%
 % The Current Maintainer of this work is IOP Publishing Ltd.
 %
 
@@ -69,12 +69,12 @@
 
 %General text options, will apply unless commands specify otherwise
 \raggedright
-\setlength\parindent{15pt} 
+\setlength\parindent{15pt}
 
 %Headers and footers
 \pagestyle{fancy}
 \fancyhfoffset[L]{27mm}
-\fancyhead[L]{{\small \sf IOP Publishing}\hspace{5mm} {\it Journal} {\bf vv} (yyyy) aaaaaa}
+\fancyhead[L]{{\small \sf IOP Publishing}\hspace{5mm} {\it Class. Quantum Grav.} {\bf vv} (2025) aaaaaa}
 \fancyhead[C]{}
 \fancyhead[R]{Author {\it et al}\ }
 \fancyfoot[LR]{}
@@ -90,12 +90,12 @@
 
 %Article title, type and left-column content
 
-\newcommand{\articletype}[1]{{\vspace*{-8mm}\noindent \Large \sf Journal Name}
+\newcommand{\articletype}[1]{{\vspace*{-8mm}\noindent \Large \sf Classical and Quantum Gravity}
 
 \vspace*{8mm} \noindent\reversemarginpar
 \marginpar{\vspace{-3mm} {\color{gray}\hrule} \ \\ Crossmark\\ {\color{gray}\hrule} \ \\ \tiny {\sf RECEIVED} {\small \\ dd Month yyyy}\\ \\ {\sf REVISED} {\small \\ dd Month yyyy}}{\scriptsize \sf{\bfseries \MakeUppercase{#1}}}}
 
-\renewcommand{\title}[1]{{\exhyphenpenalty=10000\hyphenpenalty=10000 
+\renewcommand{\title}[1]{{\exhyphenpenalty=10000\hyphenpenalty=10000
  \fontsize{18}{21}\selectfont\noindent\raggedright
         \textsf{#1}\par}\suppressfloats[t]}
 
@@ -112,7 +112,7 @@
 \newcommand{\email}[1]{\vspace*{12pt}{\fontsize{8}{10}\selectfont
        \raggedright {\bfseries E-mail:} \if@anonymous \phantom{#1} \else #1 \fi}
 	  \vspace{3mm} }
-	   
+	
 \newcommand{\keywords}[1]{{\fontsize{8}{10}\selectfont
        \raggedright {\bfseries Keywords:} #1}
 	  }

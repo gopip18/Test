@@ -4,7 +4,8 @@
 
 % Options
 % 	[anonymous]	Provides output without author names, affiliations or acknowledgments to facilitate double-anonymous peer-review
-
+\usepackage{bbold}
+\usepackage{amssymb,amsmath}
 \begin{document}
 
 \articletype{Article type} %	 e.g. Paper, Letter, Topical Review...
@@ -24,107 +25,100 @@
 \keywords{sample term, sample term, sample term}
 
 \begin{abstract}
-Sample text inserted for demonstration. Replace with abstract text. Your abstract must give readers a brief summary of your article. Concisely describe the contents of your article and include key terms. It should be informative and accessible: indicate the general scope of the article and state the main results obtained and conclusions drawn. The abstract must be complete in itself: it must not contain undefined abbreviations and must not refer to any table, figure, reference or equation numbers. Normally the abstract text is not more than 300 words.
+Replace with abstract text. 
 \end{abstract}
 
 
 \setcounter{section}{1}
 \section{Minimal Action and Field Equations}
 
-\stop
+\subsection{Postulates and notation (metric signature, units)}
 
-\textbf{2.A Postulates and notation (metric signature, units)}
+We begin by fixing the conventions that remain in force throughout the paper. Spacetime is the smooth manifold $R^{\mathbb{1},\mathbb{3}}$ endowed, at the level of the fundamental action, with the inertial metric $\eta_{\mu \nu }=\mathrm{diag}\left(-1,+1,+1,+1\right)$. Greek indices $\mu ,\nu ,\mathrm{\dots }$ run over the coordinate labels $0,1,2,3$ and are raised or lowered with ${\eta }_{\mu \nu }$ unless otherwise specified; Latin indices $i,j,\mathrm{\dots }$ refer to spatial components $1,2,3$. The Einstein summation convention is implicit, and commas denote partial differentiation, so that ${\Phi}_{,\mu }\equiv {\partial }_{\mu }\Phi$.
 
-We begin by fixing the conventions that remain in force throughout the paper. Spacetime is the smooth manifold $R^{\mathrm{1},\mathrm{3}}$ endowed, at the level of the fundamental action, with the inertial metric ${\eta }_{\mu \nu }=\mathrm{diag}\left(-1,+1,+1,+1\right)$. Greek indices $\mu ,\nu ,\mathrm{\dots }$ run over the coordinate labels $0,1,2,3$ and are raised or lowered with ${\eta }_{\mu \nu }$ unless otherwise specified; Latin indices $i,j,\mathrm{\dots }$ refer to spatial components $1,2,3$. The Einstein summation convention is implicit, and commas denote partial differentiation, so that ${\mathrm{\Phi }}_{,\mu }≡{\partial }_{\mu }\mathrm{\Phi }$.
+Natural units are adopted: the reduced Planck constant $\hslash $ and the speed of light $c$ are set to unity, $\mathrm{\hslash }=c=1$. Length, time and mass therefore share the common dimension of inverse energy. We keep Newton's constant $G_{\mathrm{N}}$ explicit, but in most intermediate expressions it is convenient to trade it for the Planck mass $M_{\mathrm{Pl}}$ via $M^2_{\mathrm{Pl}}=1/\left(8\pi G_{\mathrm{N}}\right)$.
 
-Natural units are adopted: the reduced Planck constant $\mathrm{\hslash }$ and the speed of light $c$ are set to unity, $\mathrm{\hslash }=c=1$. Length, time and mass therefore share the common dimension of inverse energy. We keep Newton's constant $G_{\mathrm{N}}$ explicit, but in most intermediate expressions it is convenient to trade it for the Planck mass $M_{\mathrm{Pl}}$ via $M^2_{\mathrm{Pl}}=1/\left(8\pi G_{\mathrm{N}}\right)$.
+The basic dynamical variable is a real scalar field $\Phi\left(x\right)$ with canonical mass dimension one. Its self-interaction potential $V\left(\Phi\right)$ is assumed to admit at least one non-degenerate vacuum value ${\Phi}_{\infty}$ around which $V''\left({\Phi}_{\infty}\right)>0$. A single positive constant $\alpha $ of dimension ${\left[\mathrm{Energy}\right]}^{-4}$ sets the strength of the derivative coupling that will generate the effective metric introduced in \S 3.
 
-The basic dynamical variable is a real scalar field $\mathrm{\Phi }\left(x\right)$ with canonical mass dimension one. Its self-interaction potential $V\left(\mathrm{\Phi }\right)$ is assumed to admit at least one non-degenerate vacuum value ${\mathrm{\Phi }}_∞$ around which $V''\left({\mathrm{\Phi }}_∞\right)>0$. A single positive constant $\alpha $ of dimension ${\left[\mathrm{Energy}\right]}^{-4}$ sets the strength of the derivative coupling that will generate the effective metric introduced in {\S} 3.
+All tensor equations quoted in the sequel obey the $\left(-\ +++\right)$ signature and the $+++$ sign convention for the Riemann tensor,  $R^{\rho }_{\sigma \mu \nu }={\partial }_{\mu }{\Gamma}^{\rho }_{\nu \sigma }-{\partial }_{\nu }{\Gamma}^{\rho }_{\mu \sigma }+{\Gamma}^{\rho }_{\mu \lambda }{\Gamma}^{\lambda }_{\nu \sigma }-{\Gamma}^{\rho }_{\nu \lambda }{\Gamma}^{\lambda }_{\mu \sigma }$. Covariant derivatives with respect to ${\eta }_{\mu \nu }$ coincide with partial derivatives, while those taken with respect to the emergent disformal metric $g^{\mathrm{eff}}_{\mu \nu }$ are written ${\mathrm{\nabla }}_{\mu }$.
 
-All tensor equations quoted in the sequel obey the $\left(-\ +++\right)$ signature and the $+++$ sign convention for the Riemann tensor,  $R^{\rho }_{\sigma \mu \nu }={\partial }_{\mu }{\mathrm{\Gamma }}^{\rho }_{\nu \sigma }-{\partial }_{\nu }{\mathrm{\Gamma }}^{\rho }_{\mu \sigma }+{\mathrm{\Gamma }}^{\rho }_{\mu \lambda }{\mathrm{\Gamma }}^{\lambda }_{\nu \sigma }-{\mathrm{\Gamma }}^{\rho }_{\nu \lambda }{\mathrm{\Gamma }}^{\lambda }_{\mu \sigma }$. Covariant derivatives with respect to ${\eta }_{\mu \nu }$ coincide with partial derivatives, while those taken with respect to the emergent disformal metric $g^{\mathrm{eff}}_{\mu \nu }$ are written ${\mathrm{\nabla }}_{\mu }$.
-
-With these postulates and notational choices established, we now turn to the construction of the minimal Lorentz-invariant action for $\mathrm{\Phi }$ and the derivation of its Euler--Lagrange and stress--energy equations.
+With these postulates and notational choices established, we now turn to the construction of the minimal Lorentz-invariant action for $\Phi$ and the derivation of its Euler--Lagrange and stress--energy equations.
 
 
-\textbf{2.B{\qquad}Lorentz-invariant prototype action}
+\subsection{Lorentz-invariant prototype action}
 
-Guided solely by locality, Poincar\'{e} symmetry and the postulates set out in {\S} 2.A, we take the fundamental dynamics of the proto-field to be governed by the canonical Klein--Gordon Lagrangian supplemented by a self-interaction potential, guided solely by locality and Lorentz invariance, we take the prototype action to be
-\[\mathcal{S}\left[\mathrm{\Phi }\right]\ =\ \int{d^4}x\ \left[-\frac{1}{2}\ {\partial }_{\mu }\mathrm{\Phi }\ {\partial }^{\mu }\mathrm{\Phi }\ -\ V\left(\mathrm{\Phi }\right)\right].\ (2.1)\]
+Guided solely by locality, Poincar\'{e} symmetry and the postulates set out in {\S} 2.A, we take the fundamental dynamics of the proto-field to be governed by the canonical Klein--Gordon Lagrangian supplemented by a self-interaction potential, guided solely by locality and Lorentz invariance, we take the prototype action to be
+\begin{equation}\label{eq2.1}
+\mathcal{S}\left[\Phi\right]\ =\ \int{d^4}x\ \left[-\frac{1}{2}\ {\partial }_{\mu }\Phi\ {\partial }^{\mu }\Phi\ -\ V\left(\Phi\right)\right].
+\end{equation}
 where the overall minus sign guarantees a positive kinetic energy in the Hamiltonian density.
 
-The kinetic coefficient 1/21/2 ensures a canonically normalized propagator in the free-field limit, while Lorentz invariance follows from the contraction of gradients with $\etaup$$\muup$$\nuup${\textbackslash}eta$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$. The potential V($\Phi$)V({\textbackslash}Phi) is left generic at this stage, subject only to the existence of at least one non-degenerate vacuum $\Phi$$\mathrm{\infty}${\textbackslash}Phi\_$\mathrm{\{}${\textbackslash}infty$\mathrm{\}}$ with V$\mathrm{\prime}$$\mathrm{\prime}$($\Phi$$\mathrm{\infty}$)$\mathrm{>}$0V''({\textbackslash}Phi\_$\mathrm{\{}${\textbackslash}infty$\mathrm{\}}$)$\mathrm{>}$0 so that small perturbations have positive mass squared. Any overall constant in VV is physically irrelevant in flat space and will drop out of the stress--energy tensor derived below.
+The kinetic coefficient 1/2 ensures a canonically normalized propagator in the free-field limit, while Lorentz invariance follows from the contraction of gradients with $\eta^{\mu\nu}$. The potential $V(\Phi)$ is left generic at this stage, subject only to the existence of at least one non-degenerate vacuum $\Phi_{\infty}$ with $V''(\Phi_{\infty}){>}0$ so that small perturbations have positive mass squared. Any overall constant in $V$ is physically irrelevant in flat space and will drop out of the stress--energy tensor derived below.
 
-Action (2.1) contains no higher than first derivatives and is therefore free of Ostrogradsky instabilities. Nevertheless, once the field gradients are promoted to geometric data in {\S} 3, the same expression will generate an effective metric and an associated quartic gradient energy that stabilises localised configurations against Derrick's scaling argument. Thus (2.1) represents the \textit{minimal} Lorentz-invariant starting point from which all subsequent constructions of the Proto Field Gravity Model unfold.
-
-
-\textbf{2.C{\qquad}Euler--Lagrange equation}
-
-Varying the action (2.1*) with respect to the field while imposing vanishing surface terms, we obtain
-
- $\deltaup$S=$\mathrm{\int}$d4x[$\mathrm{-}$$\mathrm{\partial}$$\muup$$\Phi$\ $\mathrm{\partial}$$\muup$$\deltaup$$\Phi$$\mathrm{-}$V$\mathrm{\prime}$($\Phi$)\ $\deltaup$$\Phi$]=$\mathrm{\int}$d4x\ [$\mathrm{\partial}$$\muup$$\mathrm{\partial}$$\muup$$\Phi$$\mathrm{-}$V$\mathrm{\prime}$($\Phi$)]$\deltaup$$\Phi$.{\textbackslash}delta{\textbackslash}mathcal S ={\textbackslash}int d$\mathrm{\wedge}$$\mathrm{\{}$4$\mathrm{\}}$x {\textbackslash}bigl[-{\textbackslash}partial\_{\textbackslash}mu{\textbackslash}Phi{\textbackslash},{\textbackslash}partial$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}mu$\mathrm{\}}${\textbackslash}delta{\textbackslash}Phi -V'({\textbackslash}Phi){\textbackslash},{\textbackslash}delta{\textbackslash}Phi{\textbackslash}bigr] ={\textbackslash}int d$\mathrm{\wedge}$$\mathrm{\{}$4$\mathrm{\}}$x{\textbackslash}, {\textbackslash}bigl[{\textbackslash}partial\_{\textbackslash}mu{\textbackslash}partial$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}mu$\mathrm{\}}${\textbackslash}Phi -V'({\textbackslash}Phi){\textbackslash}bigr]{\textbackslash}delta{\textbackslash}Phi .
-
-Requiring $\deltaup$S=0{\textbackslash}delta{\textbackslash}mathcal S=0 for arbitrary $\deltaup$$\Phi${\textbackslash}delta{\textbackslash}Phi yields the field equation
-
-\ \ $\mathrm{\partial}$$\muup$$\mathrm{\partial}$$\muup$$\Phi$\ \ $\mathrm{-}$\ \ V$\mathrm{\prime}$($\Phi$)=0,(2.2){\textbackslash}boxed$\mathrm{\{}${\textbackslash}; {\textbackslash}partial\_{\textbackslash}mu{\textbackslash}partial$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}mu$\mathrm{\}}${\textbackslash}Phi{\textbackslash};-{\textbackslash};V'({\textbackslash}Phi)=0$\mathrm{\}}$, {\textbackslash}tag$\mathrm{\{}$2.2$\mathrm{\}}$
-
-or, in more familiar notation, □$\Phi$$\mathrm{-}$V$\mathrm{\prime}$($\Phi$)=0{\textbackslash}Box{\textbackslash}Phi-V'({\textbackslash}Phi)=0 with □$\mathrm{\equiv}$$\mathrm{-}$$\mathrm{\partial}$t2+$\mathrm{\nabla }$2{\textbackslash}Box{\textbackslash}equiv -{\textbackslash}partial\_$\mathrm{\{}$t$\mathrm{\}}$$\mathrm{\wedge}$$\mathrm{\{}$2$\mathrm{\}}$+{\textbackslash}nabla$\mathrm{\wedge}$$\mathrm{\{}$2$\mathrm{\}}$ under our ($\mathrm{-}$+\ $\mathrm{}$+\ $\mathrm{}$+)(-+{\textbackslash}!+{\textbackslash}!+) signature. Linearising around a vacuum $\Phi$=$\Phi$$\mathrm{\infty}$+$\varphiup${\textbackslash}Phi={\textbackslash}Phi\_$\mathrm{\{}${\textbackslash}infty$\mathrm{\}}$+{\textbackslash}varphi gives (□$\mathrm{-}$m2)$\varphiup$=0({\textbackslash}Box-m$\mathrm{\wedge}$$\mathrm{\{}$2$\mathrm{\}}$){\textbackslash}varphi=0 with m2=V$\mathrm{\prime}$$\mathrm{\prime}$($\Phi$$\mathrm{\infty}$)$\mathrm{>}$0m$\mathrm{\wedge}$$\mathrm{\{}$2$\mathrm{\}}$=V''({\textbackslash}Phi\_$\mathrm{\{}${\textbackslash}infty$\mathrm{\}}$)$\mathrm{>}$0, confirming that small excitations propagate as Klein--Gordon waves of positive mass squared.
+Action \eqref{eq2.1} contains no higher than first derivatives and is therefore free of Ostrogradsky instabilities. Nevertheless, once the field gradients are promoted to geometric data in {\S} 3, the same expression will generate an effective metric and an associated quartic gradient energy that stabilises localised configurations against Derrick's scaling argument. Thus \eqref{eq2.1} represents the \textit{minimal} Lorentz-invariant starting point from which all subsequent constructions of the Proto Field Gravity Model unfold.
 
 
-\textbf{2.D{\qquad}Stress--energy tensor in flat spacetime}
+\subsection{Euler--Lagrange equation}
 
-To compute the conserved stress--energy tensor we follow the standard Hilbert prescription, varying the action with respect to the background metric and then reinstating $\etaup$$\muup$$\nuup${\textbackslash}eta\_$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$:
+Varying the action (\ref{eq2.1}*) with respect to the field while imposing vanishing surface terms, we obtain $\delta\mathcal S =\int d^{4}x \bigl[-\partial_\mu\Phi\,\partial^{\mu}\delta\Phi -V'(\Phi)\,\delta\Phi\bigr] =\int d^{4}x\, \bigl[\partial_\mu\partial^{\mu}\Phi -V'(\Phi)\bigr]\delta\Phi$.
 
-T$\muup$$\nuup$=$\mathrm{-}$2$\mathrm{-}$$\etaup$\ $\deltaup$S$\deltaup$$\etaup$$\muup$$\nuup$=$\mathrm{\partial}$$\muup$$\Phi$\ $\mathrm{\partial}$$\nuup$$\Phi$+$\etaup$$\muup$$\nuup$[$\mathrm{-}$12\ $\mathrm{\partial}$$\rhoup$$\Phi$\ $\mathrm{\partial}$$\rhoup$$\Phi$$\mathrm{-}$V($\Phi$)].(2.3)T\_$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$ =-{\textbackslash}frac$\mathrm{\{}$2$\mathrm{\}}$$\mathrm{\{}${\textbackslash}sqrt$\mathrm{\{}$-{\textbackslash}eta$\mathrm{\}}$$\mathrm{\}}${\textbackslash}, {\textbackslash}frac$\mathrm{\{}${\textbackslash}delta{\textbackslash}mathcal S$\mathrm{\}}$$\mathrm{\{}${\textbackslash}delta{\textbackslash}eta$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$$\mathrm{\}}$ ={\textbackslash}partial\_{\textbackslash}mu{\textbackslash}Phi{\textbackslash},{\textbackslash}partial\_{\textbackslash}nu{\textbackslash}Phi +{\textbackslash}eta\_$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$ {\textbackslash}bigl[-{\textbackslash}tfrac12{\textbackslash},{\textbackslash}partial\_{\textbackslash}rho{\textbackslash}Phi{\textbackslash},{\textbackslash}partial$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}rho$\mathrm{\}}${\textbackslash}Phi -V({\textbackslash}Phi){\textbackslash}bigr]. {\textbackslash}tag$\mathrm{\{}$2.3$\mathrm{\}}$
+Requiring $\delta S=0 $ for arbitrary $\delta\Phi$ yields the field equation
 
-Equation~(2.3) is symmetric, gauge-independent and conserved on-shell:$\mathrm{\partial}$$\muup$T$\muup$$\nuup$=0{\textbackslash}partial$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}mu$\mathrm{\}}$T\_$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$=0 once (2.2) holds. In particular, the energy density reads
+\begin{equation}\label{eq2}
+\partial_\mu\partial^{\mu}\Phi\;-\;V'(\Phi)=0,
+\end{equation}
+or, in more familiar notation, $\Box\Phi-V'(\Phi)=0$ with $\Box\equiv -\partial_{t}^{2}+\nabla^{2}$ under our $(-+\!+\!+)$ signature. Linearising around a vacuum $\Phi=\Phi_{\infty}+\varphi$ gives $(\Box-m^{2})\varphi=0$ with $m^{2}=V''(\Phi_{\infty})>0$, confirming that small excitations propagate as Klein--Gordon waves of positive mass squared.
 
-T00=12($\mathrm{\partial}$t$\Phi$)2+12$\mathrm{\mid }$$\mathrm{\nabla }$$\Phi$$\mathrm{\mid }$2+V($\Phi$),(2.4)T\_$\mathrm{\{}$00$\mathrm{\}}$ ={\textbackslash}tfrac12({\textbackslash}partial\_$\mathrm{\{}$t$\mathrm{\}}${\textbackslash}Phi)$\mathrm{\wedge}$$\mathrm{\{}$2$\mathrm{\}}$ +{\textbackslash}tfrac12{\textbar}{\textbackslash}nabla{\textbackslash}Phi{\textbar}$\mathrm{\wedge}$$\mathrm{\{}$2$\mathrm{\}}$ +V({\textbackslash}Phi), {\textbackslash}tag$\mathrm{\{}$2.4$\mathrm{\}}$
 
-which is manifestly positive for any real configuration, consistent with (2.1*) and with the stability requirements laid out in Appendix B.
+\subsection{Stress--energy tensor in flat spacetime}
+
+To compute the conserved stress--energy tensor we follow the standard Hilbert prescription, varying the action with respect to the background metric and then reinstating $\eta_{\mu\nu}$:
+\begin{equation}\label{eq2.3}
+T_{\mu\nu} =-\frac{2}{\sqrt{-\eta}}\, \frac{\delta\mathcal S}{\delta\eta^{\mu\nu}} =\partial_\mu\Phi\,\partial_\nu\Phi +\eta_{\mu\nu} \bigl[-\frac{1}{2}\,\partial_\rho\Phi\,\partial^{\rho}\Phi -V(\Phi)\bigr].
+\end{equation}
+
+Equation~\eqref{eq2.3} is symmetric, gauge-independent and conserved on-shell: $\partial^{\mu}T_{\mu\nu}=0$ once \eqref{eq2} holds. In particular, the energy density reads
+\begin{equation}\label{eq2.4}
+  T_{00} =\tfrac12(\partial_{t}\Phi)^{2} +\tfrac12|\nabla\Phi|^{2} +V(\Phi),
+\end{equation}
+which is manifestly positive for any real configuration, consistent with (\ref{eq2.1}*) and with the stability requirements laid out in Appendix B.
 
 
 \begin{enumerate}
-\item  \textbf{Surface term in the variation}Explicitly showing the integration by parts highlights the minus--minus cancellation:
-\end{enumerate}
+\item  \textbf{Surface term in the variation} Explicitly showing the integration by parts highlights the minus--minus cancellation:
 
-$\mathrm{-}$\ $\mathrm{}$$\mathrm{\int}$\ $\mathrm{}$$\mathrm{\partial}$$\muup$$\Phi$\ $\mathrm{\partial}$$\muup$$\deltaup$$\Phi$=$\mathrm{-}$\ $\mathrm{}$$\mathrm{\int}$\ $\mathrm{}$$\mathrm{\partial}$$\muup$\ $\mathrm{}$($\Phi$,$\muup$$\deltaup$$\Phi$)+\ $\mathrm{}$$\mathrm{\int}$\ $\mathrm{}$(□$\Phi$)\ $\deltaup$$\Phi$.-{\textbackslash}!{\textbackslash}int{\textbackslash}!{\textbackslash}partial\_{\textbackslash}mu{\textbackslash}Phi{\textbackslash},{\textbackslash}partial$\mathrm{\wedge}${\textbackslash}mu{\textbackslash}delta{\textbackslash}Phi = -{\textbackslash}!{\textbackslash}int{\textbackslash}!{\textbackslash}partial\_{\textbackslash}mu{\textbackslash}!{\textbackslash}bigl({\textbackslash}Phi$\mathrm{\wedge}$$\mathrm{\{}$,{\textbackslash}mu$\mathrm{\}}${\textbackslash}delta{\textbackslash}Phi{\textbackslash}bigr) +{\textbackslash}!{\textbackslash}int{\textbackslash}!({\textbackslash}Box{\textbackslash}Phi){\textbackslash},{\textbackslash}delta{\textbackslash}Phi.$\mathrm{-}$$\mathrm{\int}$$\mathrm{\partial}$$\muup${}$\Phi$$\mathrm{\partial}$$\muup$$\deltaup$$\Phi$=$\mathrm{-}$$\mathrm{\int}$$\mathrm{\partial}$$\muup${}($\Phi$,$\muup$$\deltaup$$\Phi$)+$\mathrm{\int}$(□$\Phi$)$\deltaup$$\Phi$.
+$$-\!\int\!\partial_\mu\Phi\,\partial^\mu\delta\Phi = -\!\int\!\partial_\mu\!\bigl(\Phi{,\mu}\delta\Phi\bigr) +\!\int\!(\Box\Phi)\,\delta\Phi.$$
+
 
 The boundary term vanishes for fields that decay sufficiently fast.
-
-\begin{enumerate}
-\item  \textbf{Trace of T$\boldsymbol{\muup}$$\boldsymbol{\nuup}$T\_$\boldsymbol{\mathrm{\{}}${\textbackslash}mu{\textbackslash}nu$\boldsymbol{\mathrm{\}}}$T$\boldsymbol{\muup}$$\boldsymbol{\nuup}${}}With your conventions
+\item  \textbf{Trace of $\boldsymbol{T_{\mu\nu}}$} With your conventions $T^\mu_\mu = -(\partial\Phi)^2 - 4V(\Phi)$ which is useful later when you discuss scale (conformal) properties.
 \end{enumerate}
 
- T$\muup$$\muup$=$\mathrm{-}$($\mathrm{\partial}$$\Phi$)2$\mathrm{-}$4V($\Phi$),T$\mathrm{\wedge}${\textbackslash}mu$\mathrm{\{}$$\mathrm{\}}$\_{\textbackslash}mu = -({\textbackslash}partial{\textbackslash}Phi)$\mathrm{\wedge}$2 - 4V({\textbackslash}Phi),T$\muup$$\muup${}=$\mathrm{-}$($\mathrm{\partial}$$\Phi$)2$\mathrm{-}$4V($\Phi$),
 
-which is useful later when you discuss scale (conformal) properties.
+\section{Emergent Disformal Metric}
 
+\subsection{Gradient-defined metric}
 
-\textbf{3{\qquad}Emergent Disformal Metric}
+The canonical stress--energy tensor \eqref{eq2.3} is quadratic in field gradients, suggesting that a suitable contraction of $\partial_\mu\Phi$ with itself can be re-interpreted as a deformation of the background geometry. Following the algebra of Appendix B, we promote the Minkowski metric to the \textbf{effective, disformal metric}
 
-\textbf{3.A{\qquad}Gradient-defined metric}
+\begin{equation} \label{eq3.1}
+g^{\rm eff}_{\mu\nu} \;=\;\eta_{\mu\nu} +\alpha\,\partial_\mu\Phi\,\partial_\nu\Phi,
+\end{equation}
+where $\alpha>0 $ carries mass dimension $-4$. The ansatz is rank-one in the sense of Sherman--Morrison and therefore admits closed-form expressions for its inverse and determinant,
+\begin{equation}\label{eq3.2}
+  g_{\rm eff}^{\mu\nu} =\eta^{\mu\nu} -\frac{\alpha\,\partial^{\mu}\Phi\,\partial^{\nu}\Phi}{1+\alpha X}, \qquad \sqrt{-g_{\rm eff}} =(1+\alpha X)^{1/2},
+\end{equation}
+with $X=\eta^{\rho\sigma}\partial_\rho\Phi\,\partial_\sigma\Phi$. Provided $1+\alpha X>0$, $g^{\rm eff}_{\mu\nu}$ is Lorentzian and smoothly reduces to $\eta_{\mu\nu}$ when gradients vanish. The field thus furnishes its own rods and clocks: world-lines of point probes extremise the line element $ds^{2}=g^{\rm eff}_{\mu\nu}dx^{\mu}dx^{\nu}$, and measurements made with such probes automatically register the back-reaction of matter on spacetime.
 
-The canonical stress--energy tensor (2.3) is quadratic in field gradients, suggesting that a suitable contraction of $\mathrm{\partial}$$\muup$$\Phi${\textbackslash}partial\_{\textbackslash}mu{\textbackslash}Phi with itself can be re-interpreted as a deformation of the background geometry. Following the algebra of Appendix B, we promote the Minkowski metric to the \textbf{effective, disformal metric}
+With our $(-+++)$ metric $X=-\dot\Phi^{2}+|\nabla\Phi|^{2}$; thus $1+\alpha X>0$ is automatically satisfied for static or mildly timelike gradients when $\alpha$ is chosen below the Planck scale.
 
-g$\muup$$\nuup$eff\ \ =\ \ $\etaup$$\muup$$\nuup$+$\alphaup$\ $\mathrm{\partial}$$\muup$$\Phi$\ $\mathrm{\partial}$$\nuup$$\Phi$,(3.1)g$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}rm eff$\mathrm{\}}$\_$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$ {\textbackslash};={\textbackslash};{\textbackslash}eta\_$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$ +{\textbackslash}alpha{\textbackslash},{\textbackslash}partial\_{\textbackslash}mu{\textbackslash}Phi{\textbackslash},{\textbackslash}partial\_{\textbackslash}nu{\textbackslash}Phi, {\textbackslash}tag$\mathrm{\{}$3.1$\mathrm{\}}$
+In the weak-gradient regime $\alpha X\ll1 $ the metric perturbation is small, $g^{\rm eff}_{\mu\nu}\simeq \eta_{\mu\nu}+\alpha\,\partial_\mu\Phi\,\partial_\nu\Phi$, and the inverse series $g^{\rm eff}_{\mu\nu}\simeq\eta^{\mu\nu}-\alpha\,\partial^{\mu}\Phi\,\partial^{\nu}\Phi+\mathcal O(\alpha^{2}X^{2})$ confirms that the propagation of low-amplitude waves is only mildly disformal. Conversely, near steep gradients the deformation grows, supplying the quartic-gradient pressure that balances Derrick scaling and anchors localised solitons ({\S} 5). No higher than first derivatives enter (3.1); the equations of motion therefore remain second order and free of Ostrogradsky ghosts despite the presence of an emergent geometry.
 
-where $\alphaup$$\mathrm{>}$0{\textbackslash}alpha$\mathrm{>}$0 carries mass dimension $\mathrm{-}$4-4. The ansatz is rank-one in the sense of Sherman--Morrison and therefore admits closed-form expressions for its inverse and determinant,
+\subsection{Relation to Horndeski and ``mimetic'' constructions}
 
-geff$\muup$$\nuup$=$\etaup$$\muup$$\nuup$$\mathrm{-}$$\alphaup$\ $\mathrm{\partial}$$\muup$$\Phi$\ $\mathrm{\partial}$$\nuup$$\Phi$1+$\alphaup$X,$\mathrm{-}$geff=(1+$\alphaup$X)1/2,(3.2)g\_$\mathrm{\{}${\textbackslash}rm eff$\mathrm{\}}$$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$ ={\textbackslash}eta$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$ -{\textbackslash}frac$\mathrm{\{}${\textbackslash}alpha{\textbackslash},{\textbackslash}partial$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}mu$\mathrm{\}}${\textbackslash}Phi{\textbackslash},{\textbackslash}partial$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}nu$\mathrm{\}}${\textbackslash}Phi$\mathrm{\}}$$\mathrm{\{}$1+{\textbackslash}alpha X$\mathrm{\}}$, {\textbackslash}qquad {\textbackslash}sqrt$\mathrm{\{}$-g\_$\mathrm{\{}${\textbackslash}rm eff$\mathrm{\}}$$\mathrm{\}}$ =(1+{\textbackslash}alpha X)$\mathrm{\wedge}$$\mathrm{\{}$1/2$\mathrm{\}}$, {\textbackslash}tag$\mathrm{\{}$3.2$\mathrm{\}}$
+Disformal metrics of the type (3.1) belong to the wider class introduced by Bekenstein, $g_{\mu\nu}=A(\Phi,X)\tilde g_{\mu\nu}+B(\Phi,X)\partial_\mu\Phi\partial_\nu\Phi$, whose most general second-order dynamics are encoded in Horndeski's theory and its degenerate extensions. Horndeski models, however, treat $g_{\mu\nu}$ and $\Phi$ as independent variables and assemble the action from a menu of curvature tensors, while in Proto Field Gravity the metric \textit{emerges algebraically} from $\Phi$ itself. The resulting Lagrangian after the field redefinition contains only the Klein--Gordon term plus an algebraic potential (Appendix B, eqs.~(B16)--(B17)), whereas generic Horndeski lagrangians feature explicit second derivatives of $\Phi$.
 
-with X=$\etaup$$\rhoup$$\sigmaup$$\mathrm{\partial}$$\rhoup$$\Phi$\ $\mathrm{\partial}$$\sigmaup$$\Phi$X={\textbackslash}eta$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}rho{\textbackslash}sigma$\mathrm{\}}${\textbackslash}partial\_{\textbackslash}rho{\textbackslash}Phi{\textbackslash},{\textbackslash}partial\_{\textbackslash}sigma{\textbackslash}Phi. Provided 1+$\alphaup$X$\mathrm{>}$01+{\textbackslash}alpha X$\mathrm{>}$0, g$\muup$$\nuup$effg$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}rm eff$\mathrm{\}}$\_$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$ is Lorentzian and smoothly reduces to $\etaup$$\muup$$\nuup${\textbackslash}eta\_$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$ when gradients vanish. The field thus furnishes its own rods and clocks: world-lines of point probes extremise the line element ds2=g$\muup$$\nuup$effdx$\muup$dx$\nuup$ds$\mathrm{\wedge}$$\mathrm{\{}$2$\mathrm{\}}$=g$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}rm eff$\mathrm{\}}$\_$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$dx$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}mu$\mathrm{\}}$dx$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}nu$\mathrm{\}}$, and measurements made with such probes automatically register the back-reaction of matter on spacetime.
-
-With our (-+ + +) metric X=$\mathrm{-}$$\Phi$˙2+$\mathrm{\mid }$$\mathrm{\nabla }$$\Phi$$\mathrm{\mid }$2X=-{\textbackslash}dot{\textbackslash}Phi$\mathrm{\wedge}$$\mathrm{\{}$2$\mathrm{\}}$+{\textbar}{\textbackslash}nabla{\textbackslash}Phi{\textbar}$\mathrm{\wedge}$$\mathrm{\{}$2$\mathrm{\}}$X=$\mathrm{-}$$\Phi$˙2+$\mathrm{\mid }$$\mathrm{\nabla }$$\Phi$$\mathrm{\mid }$2; thus 1+$\alphaup$X$\mathrm{>}$01+{\textbackslash}alpha X$\mathrm{>}$01+$\alphaup$X$\mathrm{>}$0 is automatically satisfied for static or mildly timelike gradients when $\alphaup${\textbackslash}alpha$\alphaup$ is chosen below the Planck scale.
-
-In the weak-gradient regime $\alphaup$X$\mathrm{\ll }$1{\textbackslash}alpha X{\textbackslash}ll1 the metric perturbation is small, g$\muup$$\nuup$eff$\mathrm{\simeq }$$\etaup$$\muup$$\nuup$+$\alphaup$\ $\mathrm{\partial}$$\muup$$\Phi$\ $\mathrm{\partial}$$\nuup$$\Phi$g$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}rm eff$\mathrm{\}}$\_$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}${\textbackslash}simeq {\textbackslash}eta\_$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$+{\textbackslash}alpha{\textbackslash},{\textbackslash}partial\_{\textbackslash}mu{\textbackslash}Phi{\textbackslash},{\textbackslash}partial\_{\textbackslash}nu{\textbackslash}Phi, and the inverse seriesgeff$\muup$$\nuup$$\mathrm{\simeq }$$\etaup$$\muup$$\nuup$$\mathrm{-}$$\alphaup$\ $\mathrm{\partial}$$\muup$$\Phi$\ $\mathrm{\partial}$$\nuup$$\Phi$+O($\alphaup$2X2)g\_$\mathrm{\{}${\textbackslash}rm eff$\mathrm{\}}$$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}${\textbackslash}simeq{\textbackslash}eta$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$-{\textbackslash}alpha{\textbackslash},{\textbackslash}partial$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}mu$\mathrm{\}}${\textbackslash}Phi{\textbackslash},{\textbackslash}partial$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}nu$\mathrm{\}}${\textbackslash}Phi+{\textbackslash}mathcal O({\textbackslash}alpha$\mathrm{\wedge}$$\mathrm{\{}$2$\mathrm{\}}$X$\mathrm{\wedge}$$\mathrm{\{}$2$\mathrm{\}}$)confirms that the propagation of low-amplitude waves is only mildly disformal. Conversely, near steep gradients the deformation grows, supplying the quartic-gradient pressure that balances Derrick scaling and anchors localised solitons ({\S} 5). No higher than first derivatives enter (3.1); the equations of motion therefore remain second order and free of Ostrogradsky ghosts despite the presence of an emergent geometry.
-
-\textbf{3.B{\qquad}Relation to Horndeski and ``mimetic'' constructions}
-
-Disformal metrics of the type (3.1) belong to the wider class introduced by Bekenstein, g$\muup$$\nuup$=A($\Phi$,X)g$\mathrm{\sim}$$\muup$$\nuup$+B($\Phi$,X)$\mathrm{\partial}$$\muup$$\Phi$$\mathrm{\partial}$$\nuup$$\Phi$g\_$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$=A({\textbackslash}Phi,X){\textbackslash}tilde g\_$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$+B({\textbackslash}Phi,X){\textbackslash}partial\_{\textbackslash}mu{\textbackslash}Phi{\textbackslash}partial\_{\textbackslash}nu{\textbackslash}Phi, whose most general second-order dynamics are encoded in Horndeski's theory and its degenerate extensions. Horndeski models, however, treat g$\muup$$\nuup$g\_$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}$ and $\Phi${\textbackslash}Phi as independent variables and assemble the action from a menu of curvature tensors, while in Proto Field Gravity the metric \textit{emerges algebraically} from $\Phi${\textbackslash}Phi itself. The resulting Lagrangian after the field redefinition contains only the Klein--Gordon term plus an algebraic potential (Appendix B, eqs.~(B16)--(B17)), whereas generic Horndeski lagrangians feature explicit second derivatives of $\Phi${\textbackslash}Phi.
-
-Closer in spirit is ``mimetic'' gravity, where one imposes the constraint g$\muup$$\nuup$$\mathrm{\partial}$$\muup$$\mathrm{\phi}$\ $\mathrm{\partial}$$\nuup$$\mathrm{\phi}$=$\mathrm{-}$1g$\mathrm{\wedge}$$\mathrm{\{}${\textbackslash}mu{\textbackslash}nu$\mathrm{\}}${\textbackslash}partial\_{\textbackslash}mu{\textbackslash}phi{\textbackslash},{\textbackslash}partial\_{\textbackslash}nu{\textbackslash}phi=-1 via a Lagrange multiplier and identifies the physical metric as a singular disformal transform of an auxiliary metric. That framework yields an extra, pressure-less degree of freedom often interpreted as dark matter. PFGM differs in two key respects: (i) the metric deformation is non-singular (1+$\alphaup$X$\mathrm{>}$01+{\textbackslash}alpha X$\mathrm{>}$0), so no extra constraint or multiplier is necessary; (ii) the same scalar simultaneously generates geometry \textit{and} supplies stress--energy through the quartic term, avoiding an additional dust component. In short, PFGM realises the disformal idea in its most economical form: a one-field ontology whose gradients endow spacetime with curvature while maintaining second-order field equations and a positive-definite energy.
-
-
+Closer in spirit is ``mimetic'' gravity, where one imposes the constraint $g^{\mu\nu}\partial_\mu\phi\,\partial_\nu\phi=-1$ via a Lagrange multiplier and identifies the physical metric as a singular disformal transform of an auxiliary metric. That framework yields an extra, pressure-less degree of freedom often interpreted as dark matter. PFGM differs in two key respects: (i) the metric deformation is non-singular $(1+\alpha)$, so no extra constraint or multiplier is necessary; (ii) the same scalar simultaneously generates geometry \textit{and} supplies stress--energy through the quartic term, avoiding an additional dust component. In short, PFGM realises the disformal idea in its most economical form: a one-field ontology whose gradients endow spacetime with curvature while maintaining second-order field equations and a positive-definite energy.
 
 
 
